@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newport-mirroring</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="#"><h2>NEWPORT</h2></a></div>
+            <div class="navbar_menu">
+                <div class="menu_menu">
+                    <a href="#">Gallery</a>
+                    <a href="#">blog</a>
+                    <a href="#">about</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="container">
+            <ul>
+                <li><a href="#"><img src="1.jpg"></img></a></li>
+                <li><a href="#"><img src="2.jpeg"></img></a></li>
+                <li><a href="#"><img src="3.jpg"></img></a></li>
+                <li><a href="#"><img src="4.jpg"></img></a></li>
+                <li><a href="#"><img src="5.jpeg"></img></a></li>
+                <li><a href="#"><img src="6.jpg"></img></a></li>
+                <li><a href="#"><img src="7.jpg"></img></a></li>
+                <li><a href="#"><img src="8.jpg"></img></a></li>
+                <li><a href="#"><img src="9.jpg"></img></a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  padding: 400px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: 0px 20px;
+}
+
+section .container {
+  position: relative;
+}
