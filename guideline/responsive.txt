@@ -1,0 +1,2 @@
+width 762px 
+width 982px remove menu add toggle
