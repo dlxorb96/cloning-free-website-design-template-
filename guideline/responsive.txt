@@ -1,2 +1,7 @@
 width 762px 
 width 982px remove menu add toggle
+
+다음시간에 바로 들어가야할 부분은 헤더의 css부터 들어가면됨
+색깔, 크기 :root를 통한 사용자 지정부터 시작하면 될듯
+
+색깔 정하고 a안에 글자를 수정하면 된다

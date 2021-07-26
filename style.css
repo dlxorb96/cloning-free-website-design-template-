@@ -1,18 +1,123 @@
+:root {
+  /* 헤더 */
+  --logo-color: #333333;
+  /* --logo-font-size: 30px;/ */
+  --header-padding: 70px 0px;
+
+  /* 섹션 */
+  --background-color: #fff;
+  --text-color: #333;
+  --font-size: 12px;
+  --box-padding: 10px;
+  --letter-spacing: 2px;
+  --section-font-weight: 500;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-header {
+  /* font-family: "Montserrat", sans-serif; */
 }
 
+body {
+  height: 100vh;
+  background: var(--background-color);
+}
+
+header {
+  padding: var(--header-padding);
+}
+
+.nav__bar {
+  margin: 0 auto;
+  width: 940px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .nav__bar a {
+  text-decoration: none;
+  color: var(--logo-color);
+  font-weight: var(--section-font-weight);
+}
+
+header .nav__bar h2 {
+  /* font-weight: ; */
+}
+
+header .nav__bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+header .nav__bar ul li {
+  padding: 7px 20px;
+}
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 이제 할건 일단 그리드박스로 위치를 정하자 */
+
+.container {
+  position: relative;
+  max-width: 1000px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  /* justify-content: center; */
+}
+
+.box {
+  width: 100%;
+  padding: var(--box-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container a {
+  /* 박스에 글자 크기랑 폰트랑 밑줄없애기 */
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: var(--font-size);
+  letter-spacing: var(--letter-spacing);
+}
+
+/* 박스크기도 정해줘야 할 거 같다 박스가 지금 div라서 블락임 옆에 
+다 선택되고 있는상황이다 */
+
+/* 1.이미지 크기를 먼저 정하자 */
+img {
+  width: 300px;
+  height: 300px;
+}
+
+/* 버튼 일단 크기키워서 만들거라는걸 암시해놓자 
+저기 아이콘 들어갈거야 */
 button {
   width: 80px;
   height: 80px;
   background-color: red;
 }
+
 /* /* 헤더를 만들거임 플렉스로  */
 
 /* 섹션 GRID 혹은 플렉스  */
 
 /* FOOTER */
+
+/* 자바스크립트로 토글 만들기 일단 hidden으로 숨긴다 */
+.hidden {
+  display: none;
+}
