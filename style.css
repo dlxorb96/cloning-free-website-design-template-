@@ -1,23 +1,53 @@
 :root {
-  /* 헤더 */
+  /* header */
   --logo-color: #333333;
-  /* --logo-font-size: 30px;/ */
-  --header-padding: 70px 0px;
+  --list-color: #c0c0c0;
+  --logo-hover-color: #bf3a30;
+  --logo-font-size: 33px;
+  --logo-font-weight: 1500;
+  --header-font-weight: 800;
+  --header-padding: 60px 0px;
+  --header-li-size: 12px;
 
-  /* 섹션 */
+  /* section */
   --background-color: #fff;
   --text-color: #333;
   --font-size: 12px;
   --box-padding: 10px;
   --letter-spacing: 2px;
-  --section-font-weight: 500;
+  --text-padding: 7px;
+  --text-margin: 7px;
+  --text-font-weight: 900;
+  --section-padding-bottom: 80px;
+
+  /* footer */
+  --icon-font-size: 20px;
+  --icon-margin: 1px;
+  --icon-padding: 3px;
+  --footer-h3-font-size: 12px;
+  --footer-h3-color: #bbb;
+  --footer-h3-font-letter-spacing: 1px;
+  --footer-h3-margin-top: 10px;
+
+  /* 반응형 1000px */
+
+  /* 헤더 */
+  --navbar-size: 750px;
+  --navbar-margin: 0 auto;
+  --toggle-padding: 15px;
+  --toggle-margin-right: 8px;
+  --toggle-font-size: 15px;
+
+  /* 섹션 */
+  --img-width: 233px;
+  --img-height: 233px;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -37,14 +67,25 @@ header {
   justify-content: space-between;
 }
 
-header .nav__bar a {
+/* 왼쪽 메뉴 */
+
+header .nav__bar .logo {
   text-decoration: none;
   color: var(--logo-color);
-  font-weight: var(--section-font-weight);
+  font-weight: var(--logo-font-weight);
+}
+
+header .nav__bar .logo:hover {
+  color: var(--logo-hover-color);
 }
 
 header .nav__bar h2 {
-  /* font-weight: ; */
+  font-size: var(--logo-font-size);
+}
+/* 오른쪽 메뉴 */
+
+header .nav__bar .bar {
+  height: 100%;
 }
 
 header .nav__bar ul {
@@ -54,15 +95,37 @@ header .nav__bar ul {
   list-style: none;
 }
 
-header .nav__bar ul li {
-  padding: 7px 20px;
+header .nav__bar ul a {
+  text-decoration: none;
+  color: var(--list-color);
 }
+
+header .nav__bar ul li {
+  font-weight: var(--header-font-weight);
+  padding: 7px 20px;
+  font-size: var(--header-li-size);
+}
+
+header .nav__bar ul li:hover {
+  color: var(--logo-color);
+}
+
+header .nav__bar ul .first {
+  color: var(--logo-color);
+}
+
+.hidden {
+  display: none;
+}
+
+/* 본문 */
 
 section {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: var(--section-padding-bottom);
 }
 
 /* 이제 할건 일단 그리드박스로 위치를 정하자 */
@@ -73,8 +136,21 @@ section {
   height: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 
-  /* justify-content: center; */
+.container a {
+  /* 박스에 글자 크기랑 폰트랑 밑줄없애기 */
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: var(--font-size);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--text-font-weight);
+  transition: 0.2s ease-in-out;
+}
+
+.container a:hover {
+  opacity: 0.75;
+  transform: scale(1.01);
 }
 
 .box {
@@ -85,39 +161,167 @@ section {
   align-items: center;
   justify-content: center;
 }
-
-.container a {
-  /* 박스에 글자 크기랑 폰트랑 밑줄없애기 */
-  text-decoration: none;
-  color: var(--text-color);
-  font-size: var(--font-size);
-  letter-spacing: var(--letter-spacing);
+/* 박스에 글자 띄우기 밑으로 */
+.box p {
+  padding: var(--text-padding);
+  margin: var(--text-margin);
 }
 
-/* 박스크기도 정해줘야 할 거 같다 박스가 지금 div라서 블락임 옆에 
-다 선택되고 있는상황이다 */
-
-/* 1.이미지 크기를 먼저 정하자 */
+/* 이미지 크기 */
 img {
   width: 300px;
   height: 300px;
 }
 
+/* fotter */
+
 /* 버튼 일단 크기키워서 만들거라는걸 암시해놓자 
 저기 아이콘 들어갈거야 */
-button {
-  width: 80px;
-  height: 80px;
-  background-color: red;
+
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0px;
+  flex-direction: column;
 }
 
-/* /* 헤더를 만들거임 플렉스로  */
+.icons {
+  /* display: block; */
+}
 
-/* 섹션 GRID 혹은 플렉스  */
+.icons i.fab {
+  font-size: var(--icon-font-size);
+  margin: var(--icon-margin);
+  cursor: pointer;
+  padding: var(--icon-padding);
+  transition: 0.25s;
+}
 
-/* FOOTER */
+.icons i.fab:hover {
+  color: var(--footer-h3-color);
+}
 
-/* 자바스크립트로 토글 만들기 일단 hidden으로 숨긴다 */
-.hidden {
-  display: none;
+footer h3 {
+  font-size: var(--footer-h3-font-size);
+  color: var(--footer-h3-color);
+  letter-spacing: var(--footer-h3-font-letter-spacing);
+  margin-top: var(--footer-h3-margin-top);
+}
+
+/* 반응형 1000px시 이미지 크기가 작아지고 그리드 비율이 수정된다 */
+@media screen and (max-width: 1000px) {
+  /* 반응형 헤더 */
+  /* 원래꺼 */
+  /* .nav__bar {
+    max-width: var(--navbar-size);
+    margin: var(--navbar-margin);
+    overflow: hidden;
+  } */
+
+  .nav__bar {
+    max-width: var(--navbar-size);
+    margin: var(--navbar-margin);
+    overflow: hidden;
+  }
+
+  /* 숨겨져있던 토글 나오기 */
+  .nav__bar .hidden {
+    display: inline-block;
+    padding: var(--toggle-padding);
+    cursor: pointer;
+    font-size: var(--toggle-font-size);
+    margin-right: var(--toggle-margin-right);
+  }
+
+  /* li 사라지기 */
+  .nav__bar .bar {
+    position: relative;
+    left: 800px;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+  }
+
+  /* li 나오기 */
+  .nav__bar .bar.active {
+    position: relative;
+    left: 150px;
+    display: flex;
+    transition: 0.5s ease-in-out;
+  }
+  /* 반응형 섹션 */
+
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 750px;
+  }
+
+  .container img {
+    width: var(--img-width);
+    height: var(--img-height);
+  }
+}
+
+/* 760px시 한장 씩 반응형 */
+@media screen and (max-width: 760px) {
+  header {
+    padding: 24px 0;
+  }
+
+  header .nav__bar {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 710px;
+    overflow: hidden;
+  }
+
+  .nav__bar .hidden {
+    position: absolute;
+    right: 30px;
+  }
+
+  .nav__bar .bar {
+    display: none;
+  }
+
+  .nav__bar .bar.active {
+    left: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #nav__bar_ul {
+    flex-direction: column;
+  }
+
+  section {
+    padding: 10px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .container a {
+    width: 100%;
+    height: 100%;
+  }
+  .container .box {
+    width: 100%;
+  }
+
+  .container img {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+  }
+
+  /* 토글 줄였을 때 사라짐 위치 조정해야함 */
 }
